@@ -28,12 +28,12 @@ public class BuyCoffeeProcessor implements ICoffeeMachineProcessor {
 
     @Override
     public void execute(Machine coffeeMachine) {
-        String title = ConsoleReader.readCommands(Constants.PURCHASE_SPECIFICATION);
-        if(title.equals("back")){
+        String recipeTitle = ConsoleReader.readCommands(Constants.PURCHASE_SPECIFICATION);
+        if(recipeTitle.equals("back")){
             return;
         }
-        RecipeProvider coffee = RecipeProvider.fromTitle(title);
-        CoffeeRecipe recipe = coffee.getRecipe();
+        RecipeProvider recipeProvider = RecipeProvider.fromTitle(recipeTitle);
+        CoffeeRecipe recipe = recipeProvider.getRecipe();
         if (!isResourcesEnough(coffeeMachine, recipe)) {
             return;
         }

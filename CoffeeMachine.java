@@ -1,6 +1,14 @@
 import controllers.cookers.ICoffeeCooker;
-import controllers.cookers.impl.*;
-import controllers.processors.impl.*;
+import controllers.cookers.impl.WaterTaker;
+import controllers.cookers.impl.MilkTaker;
+import controllers.cookers.impl.CoffeeBeansTaker;
+import controllers.cookers.impl.CupsTaker;
+import controllers.cookers.impl.MoneyTaker;
+import controllers.processors.impl.BuyCoffeeProcessor;
+import controllers.processors.impl.FillMachineProcessor;
+import controllers.processors.impl.ExitProcessor;
+import controllers.processors.impl.TakeMoneyProcessor;
+import controllers.processors.impl.RemainderProcessor;
 import controllers.fillers.ICoffeeMachineFiller;
 import controllers.fillers.impl.CoffeeBeansFiller;
 import controllers.fillers.impl.CupsFiller;

@@ -1,11 +1,6 @@
 package models;
 
-public record CoffeeRecipe(String title, int waterPerCup, int milkPerCup, int coffeeBeansPerCup, int price) {
-    @Override
-    public String title() {
-        return title;
-    }
-
+public record CoffeeRecipe(int waterPerCup, int milkPerCup, int coffeeBeansPerCup, int price) {
     @Override
     public int waterPerCup() {
         return waterPerCup;
