@@ -8,7 +8,7 @@ import utils.ConsoleReader;
 public class CupsFiller implements ICoffeeMachineFiller {
     private final IntegerInputSpecification specification = new IntegerInputSpecification(
             "Write how many disposable cups you want to add:", "Invalid number",
-            Integer.MAX_VALUE, 0);
+            50, 0);
 
     @Override
     public void fillSupply(Machine coffeeMachine) {

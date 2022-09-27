@@ -2,28 +2,24 @@ package models;
 
 
 public class Machine {
-    private boolean isOn;
+    private boolean isOn = true;
     private int water = 400;
     private int milk = 540;
     private int coffeeBeans = 120;
     private int disposableCups = 9;
     private int money = 550;
 
-    public Machine() {
-        this.isOn = true;
-    }
-
-    public void work(String command){
-
-    }
-
     public void showStats() {
-        System.out.printf("\nThe coffee machine has:\n" +
-                "%d ml of water\n" +
-                "%d ml of milk\n" +
-                "%d g of coffee beans\n" +
-                "%d disposable cups\n" +
-                "$%d of money\n\n", water, milk, coffeeBeans, disposableCups, money);
+        System.out.printf("""
+
+                The coffee machine has:
+                %d ml of water
+                %d ml of milk
+                %d g of coffee beans
+                %d disposable cups
+                $%d of money
+
+                """, water, milk, coffeeBeans, disposableCups, money);
     }
 
     public void payMoney(int price) {
@@ -40,8 +36,8 @@ public class Machine {
         return isOn;
     }
 
-    public void setOn(boolean on) {
-        isOn = on;
+    public void setOn(boolean isOn) {
+        this.isOn = isOn;
     }
 
     public int getWater() {
@@ -91,5 +87,4 @@ public class Machine {
     public void takeCup() {
         this.disposableCups--;
     }
-
 }

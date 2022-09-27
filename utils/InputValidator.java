@@ -5,13 +5,17 @@ import specifications.IntegerInputSpecification;
 
 public class InputValidator {
 
-    public static boolean validateInt(String input, IntegerInputSpecification specification) {
-        try {
-            int value = Integer.parseInt(input);
-            return specification.maxValue() >= value && specification.minValue() <= value;
-        } catch (NumberFormatException exception) {
-            return false;
+    public static boolean validateInt(String input) {
+        for (char c : input.toCharArray()) {
+            if (!Character.isDigit(c)) {
+                return false;
+            }
         }
+        return true;
+    }
+
+    public static boolean validateRange(int value, IntegerInputSpecification specification) {
+        return value >= specification.minValue() || value <= specification.maxValue();
     }
 
     public static boolean validateString(String input, InputSpecification specification) {

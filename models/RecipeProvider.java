@@ -21,7 +21,6 @@ public enum RecipeProvider {
         }
     };
 
-
     private final String title;
 
     RecipeProvider(String title) {
@@ -37,8 +36,7 @@ public enum RecipeProvider {
         str.trimToSize();
         return str.toString();
     }
-
-
+    
     public String getTitle() {
         return title;
     }

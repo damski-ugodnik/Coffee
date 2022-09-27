@@ -13,8 +13,11 @@ public class ConsoleReader {
         while (true) {
             System.out.println(specification.inputMessage());
             input = scanner.next();
-            if (InputValidator.validateInt(input, specification)) {
-                return Integer.parseInt(input);
+            if (InputValidator.validateInt(input)) {
+                int result = Integer.parseInt(input);
+                if (InputValidator.validateRange(result, specification)) {
+                    return result;
+                }
             }
             System.out.println(specification.invalidValueMessage());
         }
@@ -22,10 +25,10 @@ public class ConsoleReader {
 
     public static String readCommands(InputSpecification specification) {
         String input;
-        while (true){
-            System.out.print(specification.inputMessage()+"\n");
+        while (true) {
+            System.out.print(specification.inputMessage() + "\n");
             input = scanner.next();
-            if(InputValidator.validateString(input, specification)){
+            if (InputValidator.validateString(input, specification)) {
                 return input;
             }
             System.out.println(specification.invalidValueMessage());

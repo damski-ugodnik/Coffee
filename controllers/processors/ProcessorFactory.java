@@ -12,12 +12,7 @@ public class ProcessorFactory {
 
     public ProcessorFactory(List<ICoffeeMachineProcessor> processorsList) {
         this.processors = processorsList.stream().collect(Collectors.toMap(ICoffeeMachineProcessor::getOperationTitle, Function.identity()));
-        Set<String> operationNames = new HashSet<>();
-
-        for (ICoffeeMachineProcessor coffeeMachineProcessor : processorsList) {
-            operationNames.add(coffeeMachineProcessor.getOperationTitle());
-        }
-
+        Set<String> operationNames = processors.keySet();
         this.specification = new InputSpecification(String.format("Write action (%s):",String.join(", ", operationNames)) , "Invalid operation", operationNames);
     }
 

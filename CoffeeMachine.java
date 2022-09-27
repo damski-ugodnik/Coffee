@@ -29,8 +29,6 @@ import java.util.List;
 
 
 public class CoffeeMachine {
-
-
     public static void main(String[] args) {
         List<ICoffeeMachineFiller> fillers = new LinkedList<>(){{
             add(new WaterFiller());
